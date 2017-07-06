@@ -35,7 +35,11 @@ function Vim_config ()
             mkdir -p /root/bin 
         fi
 
-        cp -f ../vim-go-ide-bin/* /root/bin/
+        for f in $(ls ../vim-go-ide-bin/)
+        do
+            cp -f ../vim-go-ide-bin/$f /root/bin/ 
+        done
+
 	    . ~/.bashrc
 	    echo "this vim config is success !" 
 	    exit 0
