@@ -44,15 +44,15 @@ function Vim_config ()
 	    echo "this vim config is success !" 
 	    exit 0
     else
-        chmod 777 -R *
-	    sudo tar -zxf ${VIM_FILE} -C ~/
+        #chmod 777 -R *
+	    tar -zxf ${VIM_FILE} -C ~/
 	    read -p "Please input your name:" AUTHOR      
 	    sed -i "s/Bill/$AUTHOR/g" $VIMRC     
 	    read -p "Please input your E-mail:" MAIL_AUTHOR     
 	    sed -i "s/XXXXXXX@qq.com/$MAIL_AUTHOR/g" $VIMRC     
 	    cd ./packages/
-        sudo tar -zxf ctags.tar.gz -C /usr/bin/
-        sudo chmod 755 /usr/bin/ctags
+        #sudo tar -zxf ctags.tar.gz -C /usr/bin/
+        #chmod 755 /usr/bin/ctags
 	    CK_VIM=`grep "vi='vim'" ~/.bashrc | wc -l`
 	    if [ "w${CK_VIM}" = "w0" ]
 	    then
